@@ -1,0 +1,20 @@
+package co.pitam.ptmck.stream;
+
+import co.pitam.ptmck.mode.Hero;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.function.Consumer;
+
+@Slf4j
+@Configuration
+public class ProcessStream {
+
+    @Bean
+    public Consumer<Hero> processOrder(){
+        return hero->{
+            log.info("received: {}",hero);
+        };
+    }
+}
