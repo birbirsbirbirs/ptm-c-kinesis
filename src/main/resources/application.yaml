@@ -1,5 +1,6 @@
 server:
-  port: 8081
+#  port: 8081
+  port: 0
 
 spring:
   application:
@@ -11,7 +12,7 @@ spring:
     aws:
       endpoint: http://localhost:4566
       region:
-        static: us-west-1
+        static: us-east-1
       credentials:
         access-key: noop
         secret-key: noop
@@ -20,5 +21,6 @@ spring:
         processOrder-in-0:
           destination: ptm-kinesis
           content-type: application/json
+          group: g100
     function:
       definition: processOrder
