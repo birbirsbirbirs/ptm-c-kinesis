@@ -19,7 +19,7 @@ spring:
     stream:
       bindings:
         processOrder-in-0:
-          destination: ptm-kinesis
+          destination: ptm-kinesis-stream
           content-type: application/json
           group: g100
     function:
