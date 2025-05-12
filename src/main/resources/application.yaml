@@ -24,3 +24,6 @@ spring:
           group: g100
     function:
       definition: processOrder
+  output:
+    ansi:
+      enabled: always

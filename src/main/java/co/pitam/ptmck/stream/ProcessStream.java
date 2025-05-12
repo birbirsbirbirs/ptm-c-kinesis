@@ -4,6 +4,7 @@ import co.pitam.ptmck.mode.Hero;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.Message;
 
 import java.util.function.Consumer;
 
@@ -12,9 +13,10 @@ import java.util.function.Consumer;
 public class ProcessStream {
 
     @Bean
-    public Consumer<Hero> processOrder(){
-        return hero->{
-            log.info("received: {}",hero);
+    public Consumer<Message<?>> processOrder(){
+        return message->{
+            String s = new String((byte[]) message.getPayload());
+            log.info(s);
         };
     }
 }
